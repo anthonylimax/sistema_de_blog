@@ -8,9 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import atividade_marcio_03.com.example.atividade_marcio_03.dtos.PostDto;
 import atividade_marcio_03.com.example.atividade_marcio_03.dtos.CreatePostDto;
 import atividade_marcio_03.com.example.atividade_marcio_03.models.Post;
-import atividade_marcio_03.com.example.atividade_marcio_03.models.Usuario;
 import atividade_marcio_03.com.example.atividade_marcio_03.services.PostService;
-import atividade_marcio_03.com.example.atividade_marcio_03.services.UserService;
 import java.util.List;
 
 @RestController
