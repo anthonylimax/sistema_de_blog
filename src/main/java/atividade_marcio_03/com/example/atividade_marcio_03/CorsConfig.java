@@ -12,7 +12,7 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")  // Permite todos os endpoints
-                        .allowedOrigins("https://seu-dominio.com")  // Substitua pelo seu domínio HTTPS
+                        .allowedOrigins("*")  // Substitua pelo seu domínio HTTPS
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);  // Necessário se estiver usando autenticação com cookies
