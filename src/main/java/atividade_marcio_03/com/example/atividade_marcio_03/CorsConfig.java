@@ -1,14 +1,22 @@
-package atividade_marcio_03.com.example.atividade_marcio_03;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-public class CorsConfig implements WebMvcConfigurer {
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
-                .allowedOrigins("*") // Permitir solicitações de todas as origens
-                .allowedMethods("GET", "POST", "PUT", "DELETE"); // Permitir os métodos HTTP especificados
+public class CorsConfig {
+
+    @Bean
+    public WebMvcConfigurer corsConfigurer() {
+        return new WebMvcConfigurer() {
+            @Override
+            public void addCorsMappings(CorsRegistry registry) {
+                registry.addMapping("/**")  // Permite todos os endpoints
+                        .allowedOrigins("https://seu-dominio.com")  // Substitua pelo seu domínio HTTPS
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS")
+                        .allowedHeaders("*")
+                        .allowCredentials(true);  // Necessário se estiver usando autenticação com cookies
+            }
+        };
     }
 }
